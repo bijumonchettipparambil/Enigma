@@ -1,0 +1,8 @@
+# Ignore the compiled executable
+enigma
+
+# Ignore Vim swap files
+*.swp
+
+# Ignore object files (if we generate them later)
+*.o
