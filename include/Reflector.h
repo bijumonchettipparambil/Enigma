@@ -16,7 +16,7 @@
 typedef struct Reflector
 {
 	char* name; 		// Name of the Reflector
-	char wiring[26];	// Wiring order of alphabets
+	char* wiring;	// Wiring order of alphabets
 }t_Reflector;
 
 //----------------------------------------------------------------
@@ -25,7 +25,7 @@ typedef struct Reflector
 
 // Generate and return an instance of a reflector assembly
 // for a given reflector name
-static t_Reflector get_reflector(const char* name);
+static t_Reflector get_reflector(const char*);
 
 // Build reflector assembly for UKW-B
 static t_Reflector build_reflector_UKW_B(void);
@@ -35,7 +35,7 @@ static t_Reflector build_reflector_UKW_C(void);
 
 // Print the reflector assembly settings for a given reflector
 // name
-static void view_reflector(const char* name);
+static void view_reflector(const char*);
 
 //----------------------------------------------------------------
 // Function definition

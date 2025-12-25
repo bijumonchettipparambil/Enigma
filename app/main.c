@@ -9,6 +9,7 @@
 
 #include "Rotor.h"
 #include "Reflector.h"
+#include "Engine.h"
 
 int main()
 {
@@ -20,6 +21,17 @@ int main()
     view_rotor(5);
     view_reflector("UKW-B");
     view_reflector("UKW-C");
+
+    t_Rotor rotor = get_rotor(1);
+
+    rotor = initial_rotor_adjustment(rotor, 25);
+    printf("Rotor adjusted by offset: %d\n", 25);
+    print_rotor(rotor);
+
+    rotor = step_rotor_by_count(rotor, 1);
+    printf("Rotor stepped by : %d\n", 1);
+    print_rotor(rotor);
+
     printf("[Info] Enigma: Completed...\n");
     return 0;
 }
