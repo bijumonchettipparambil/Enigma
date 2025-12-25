@@ -1,3 +1,9 @@
+/**
+ * File type	: Source
+ * File name	: Engine.c
+ * Description	: Implementation of Enigma core engine.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 

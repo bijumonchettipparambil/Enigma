@@ -3,7 +3,7 @@
 /**
  * File type	: Header
  * File name	: Engine.h
- * Description	: Implementation of the Enigma core engine.
+ * Description	: Definition of the Enigma core engine.
  */
 
 #include <stdio.h>
