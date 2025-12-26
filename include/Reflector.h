@@ -15,8 +15,8 @@
 // Structure representing a German Enigma reflector assembly
 typedef struct Reflector
 {
-	char* name; 		// Name of the Reflector
-	char* wiring;	// Wiring order of alphabets
+	const char* name; 	// Name of the Reflector
+	const char* wiring;	// Wiring order of alphabets
 }t_Reflector;
 
 //----------------------------------------------------------------

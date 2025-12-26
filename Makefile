@@ -10,7 +10,7 @@
 CC = gcc
 
 # Compiler flags
-CFLAGS = -Wall -Wextra -pedantic -std=c99 -g -Iinclude
+CFLAGS = -Wall -Wextra -pedantic -Wwrite-strings -std=c99 -g -Iinclude
 
 # Application name
 TARGET = enigma
