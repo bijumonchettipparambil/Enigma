@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 
 // Structure representing a German Enigma rotor assembly
 typedef struct Rotor
@@ -48,5 +49,8 @@ void view_rotor(const int);
 
 // Print a given rotor
 void print_rotor(const t_Rotor);
+
+// Convert a given rotor to string representation
+void rotor_to_string(const t_Rotor, char*, size_t);
 
 #endif

@@ -79,3 +79,10 @@ void print_rotor(const t_Rotor rotor)
 {
     fprintf(stdout,"[Info] Rotor.h: {\"id\": %d, \"wiring\": \"%s\", \"notch\": %d}\n", rotor.id, rotor.wiring, rotor.notch);
 }
+
+// Convert a given rotor to string representation
+void rotor_to_string(const t_Rotor rotor, char* p_buffer, size_t buffer_length)
+{
+    snprintf(p_buffer, buffer_length, "{\"id\": %d, \"wiring\": \"%s\", \"notch\": %d}", 
+    rotor.id, rotor.wiring, rotor.notch);
+}

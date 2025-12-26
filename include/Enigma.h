@@ -11,26 +11,44 @@
 
 #include "Rotor.h"
 
-// Structure representing an encyption context
+// Structure representing input context
 typedef struct 
 {
 
+    // Debug switch
+    const int debug;
     // Input configuration
-	int slot1_rotor_id;
-    int slot1_window_letter;
-    int slot1_rotor_offset;
-    int slot2_rotor_id;
-    int slot2_window_letter;
-    int slot2_rotor_offset;
-	int slot3_rotor_id;
-    int slot3_window_letter;
-    int slot3_rotor_offset;
+	const int right_rotor_id;
+    const int middle_rotor_id;
+    const int left_rotor_id;
+	const int right_rotor_offset;
+    const int middle_rotor_offset;
+    const int left_rotor_offset;
+    const int right_window_letter;
+    const int middle_window_letter;
+    const int left_window_letter;
+   // Input data
+    const char* input;
+
+}t_Input_Context;
+
+// Structure representing processing context
+typedef struct
+{
+    // Debug switch
+    const int debug;
     // Input data
     const char* input;
-    // Output data
-    char* output;
+    // Rotors
+    t_Rotor right_rotor;
+    t_Rotor middle_rotor;
+    t_Rotor left_rotor;
+    // Window letters
+    char right_window_letter;
+    char middle_window_letter;
+    char left_window_letter;
 
-}t_Context;
+}t_Processing_Context;
 
 //----------------------------------------------------------------
 // Function declaration
@@ -48,5 +66,17 @@ int is_rotor_at_notch(const t_Rotor, const int);
 
 // Compute window letter to the corresponding integer offset
 int get_window_letter_index(const char);
+
+// Setup for processing
+t_Processing_Context setup_for_processing(const t_Input_Context);
+
+// Process input
+const char* process_input(const t_Processing_Context);
+
+// Debug print input context
+void debug_print_input_context(const t_Input_Context);
+
+// Debug print processing context
+void debug_print_processing_context(const t_Processing_Context);
 
 #endif // ENIGMA_ENIGMA_H_

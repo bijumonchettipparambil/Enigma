@@ -14,36 +14,30 @@
 int main()
 {
     printf("[Info] Enigma: Initialising...\n");
-    view_rotor(1);
-    view_rotor(2);
-    view_rotor(3);
-    view_rotor(4);
-    view_rotor(5);
-    view_reflector("UKW-B");
-    view_reflector("UKW-C");
-
-    t_Rotor rotor = get_rotor(1);
-
-    rotor = initial_rotor_adjustment(rotor, 25);
-    printf("Rotor adjusted by offset: %d\n", 25);
-    print_rotor(rotor);
-
-    rotor = step_rotor_by_count(rotor, 1);
-    printf("Rotor stepped by : %d\n", 1);
-    print_rotor(rotor);
- 
-    rotor = step_rotor_by_count(rotor, 2);
-    printf("Rotor stepped by : %d\n", 2);
-    print_rotor(rotor);
-
-    rotor = step_rotor_by_count(rotor, 3);
-    printf("Rotor stepped by : %d\n", 3);
-    print_rotor(rotor);
-
-    printf("Notch: %d", is_rotor_at_notch(rotor, 17));
     
-    printf("Index of \"%c\" is \"%d\".\n", 'Z',get_window_letter_index('Z'));
-    
+    t_Input_Context in_cntxt =
+    {
+        1,      // Turn on debug
+        1,      // Right rotor_id
+        2,      // Middle rotor_id
+        3,      // Left rotor_id
+        0,      // Right rotor offset
+        0,      // Middle rotor offset
+        0,      // Left rotor offset
+        'A',    // Right rotor window letter
+        'A',    // Middle rotor window letter
+        'A',    // Left rotor window letter
+        "Enigma test input"
+    };
+   
+    debug_print_input_context(in_cntxt);
+
+    t_Processing_Context proc_cntxt = setup_for_processing(in_cntxt);
+
+    debug_print_processing_context(proc_cntxt);
+
+    printf("%s\n", process_input(proc_cntxt));
+
     printf("[Info] Enigma: Completed...\n");
     return 0;
 }
